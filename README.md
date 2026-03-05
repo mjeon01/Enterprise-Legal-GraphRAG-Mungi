@@ -1,17 +1,17 @@
 # Enterprise-Logistics-GraphRAG-Mungi
 
-This repository contains the implementation of a local development environment and hardware acceleration benchmarks for an enterprise-level Logistics GraphRAG system.
+This repository contains the implementation of a local development environment and hardware acceleration benchmarks for an enterprise-level Legal GraphRAG system.
 
 ## 📊 Data Source: Supply Chain Intelligence (SupplyGraph)
 
-To ensure enterprise-level reasoning, this project utilizes high-fidelity supply chain graph datasets.
+To ensure high-fidelity legal reasoning and information retrieval, this project utilizes a specialized legal benchmark dataset.
 
-**Dataset:** [`azminetoushikwasi/SupplyGraph`](https://huggingface.co/datasets/azminetoushikwasi/SupplyGraph)
+**Dataset:** [`legal-rag-bench`](https://huggingface.co/datasets/isaacus/legal-rag-bench
+)
 
-* **Source**: Benchmark dataset derived from pharmaceutical supply chain network data.
-* **Content**: Annotated complex bi-level logistics flows (Supplier-Warehouse-Retailer).
-* **Scale**: ~80,000+ edges of structured logistics context.
-
+* **Source**: A comprehensive benchmark dataset designed for evaluating RAG performance in the legal domain.
+* **Content**: Structured text data including complex legal statutes, case laws, and legal arguments.
+* **Scale**: High-quality legal contexts requiring precise semantic parsing and entity relationship extraction.
 
 
 ---
@@ -20,21 +20,21 @@ To ensure enterprise-level reasoning, this project utilizes high-fidelity supply
 
 | Task | Target Device | Metric | Result |
 | :--- | :--- | :--- | :--- |
-| **Tensor Embedding** | Apple M4 Pro (MPS) | **Latency** | **85.11 ms** (Optimized) |
+| **Tensor Embedding** | Apple M4 Pro (MPS) | **Latency** | **0.63 ms** (Optimized) |
 | **Batch Size** | 100 Samples | **Hardware** | Unified Memory |
-| **Dataset Scale** | SupplyGraph | **Samples** | 80,000+ edges |
+| **Dataset Scale** | Legal RAG Bench | **Samples** | 4.976 rows |
 
 ### Execution Proof
 
 ![Benchmark Result](./src/Benchmark_result.png)
 
-> **Technical Note**: The latency has been significantly reduced to **85.11ms** through modular architecture optimization and MPS kernel warm-up on Apple Silicon's unified memory.
+> **Technical Note**: The latency has been significantly reduced to **0.63ms** through modular architecture optimization and MPS kernel warm-up on Apple Silicon's unified memory.
 
 ---
 
 ## 🛠️ Project Structure (Python Convention)
-
-This project strictly follows the **src/** folder structure convention for maintainable enterprise software development:
+### Modular Architecture
+Following the enterprise collaboration standard, the source code is modularized into the src/ directory.
 
 ```text
 Enterprise-Logistics-GraphRAG-Mungi/
