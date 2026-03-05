@@ -2,7 +2,7 @@
 
 This repository contains the implementation of a local development environment and hardware acceleration benchmarks for an enterprise-level Legal GraphRAG system.
 
-## 📊 Data Source: Supply Chain Intelligence (SupplyGraph)
+## 📊 Data Source: legal-rag-bench
 
 To ensure high-fidelity legal reasoning and information retrieval, this project utilizes a specialized legal benchmark dataset.
 
@@ -20,7 +20,7 @@ To ensure high-fidelity legal reasoning and information retrieval, this project 
 
 | Task | Target Device | Metric | Result |
 | :--- | :--- | :--- | :--- |
-| **Tensor Embedding** | Apple M4 Pro (MPS) | **Latency** | **0.63 ms** (Optimized) |
+| **Tensor Embedding** | Apple M4 Pro (MPS) | **Latency** | **0.31 ms** (Optimized) |
 | **Batch Size** | 100 Samples | **Hardware** | Unified Memory |
 | **Dataset Scale** | Legal RAG Bench | **Samples** | 4.976 rows |
 
@@ -28,7 +28,7 @@ To ensure high-fidelity legal reasoning and information retrieval, this project 
 
 ![Benchmark Result](./src/Benchmark_result.png)
 
-> **Technical Note**: The latency has been significantly reduced to **0.63ms** through modular architecture optimization and MPS kernel warm-up on Apple Silicon's unified memory.
+> **Technical Note**: The latency has been significantly reduced to **0.31ms** through modular architecture optimization and MPS kernel warm-up on Apple Silicon's unified memory.
 
 ---
 
