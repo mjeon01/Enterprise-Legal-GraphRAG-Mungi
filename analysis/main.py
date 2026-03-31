@@ -1,5 +1,3 @@
-"""Entry point: run all dataset analyses."""
-
 from analysis.loader import load_all
 from analysis.hierarchy import analyze_hierarchy
 from analysis.lengths import analyze_lengths

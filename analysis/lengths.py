@@ -29,8 +29,8 @@ def analyze_lengths(corpus: list) -> None:
     # ASCII histogram
     bucket_size = max(1, (lengths[-1] - lengths[0]) // 10)
     buckets: dict[int, int] = defaultdict(int)
-    for l in lengths:
-        buckets[(l - lengths[0]) // bucket_size] += 1
+    for wc in lengths:
+        buckets[(wc - lengths[0]) // bucket_size] += 1
 
     print("\n[Word-count histogram]")
     bar_width = 30
@@ -52,7 +52,7 @@ def analyze_lengths(corpus: list) -> None:
     print(f"  median         : {percentile(counts, 50):.0f}")
     print(f"  max            : {counts[-1]}")
     print(f"  mean           : {sum(counts)/len(counts):.1f}")
-
     print("\n[Sections with most passages (top 10)]")
+    
     for section, cnt in section_counts.most_common(10):
         print(f"  {section}: {cnt}")

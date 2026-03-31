@@ -32,7 +32,7 @@ def analyze_overlap(corpus: list, qa: list) -> None:
     vals = [s["score"] for s in scores_sorted]
     n = len(vals)
 
-    print(f"\n[Jaccard overlap stats]")
+    print("\n[Jaccard overlap stats]")
     print(f"  count : {n}")
     print(f"  min   : {min(vals):.4f}")
     print(f"  p25   : {percentile(vals, 25):.4f}")
@@ -45,6 +45,7 @@ def analyze_overlap(corpus: list, qa: list) -> None:
     hard_cases = [s for s in scores_sorted if s["score"] <= hard_threshold]
 
     print(f"\n[Hard cases] Jaccard ≤ {hard_threshold:.4f}  (bottom 25% — retrieval is harder)")
+    
     for hc in hard_cases:
         q_short = hc["question"][:80] + ("…" if len(hc["question"]) > 80 else "")
         print(f"  qa={hc['qa_id']:>3}  passage={hc['passage_id']:<15}  score={hc['score']:.4f}  {q_short}")
@@ -53,6 +54,7 @@ def analyze_overlap(corpus: list, qa: list) -> None:
     easy_cases = [s for s in reversed(scores_sorted) if s["score"] >= easy_threshold]
 
     print(f"\n[Easy cases]  Jaccard ≥ {easy_threshold:.4f}  (top 25% — high lexical overlap)")
+    
     for ec in list(easy_cases)[:10]:
         q_short = ec["question"][:80] + ("…" if len(ec["question"]) > 80 else "")
         print(f"  qa={ec['qa_id']:>3}  passage={ec['passage_id']:<15}  score={ec['score']:.4f}  {ec['question'][:80]}")

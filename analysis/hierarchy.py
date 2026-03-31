@@ -21,8 +21,8 @@ def analyze_hierarchy(corpus: list) -> None:
     chapters_by_depth = defaultdict(set)
     for p in parsed:
         chapters_by_depth[p["depth"]].add(p["chapter"])
-
     print("\n[Unique sections per depth]")
+    
     for depth in sorted(chapters_by_depth):
         print(f"  depth {depth}: {len(chapters_by_depth[depth])} unique sections")
 
@@ -30,7 +30,7 @@ def analyze_hierarchy(corpus: list) -> None:
     for p in parsed:
         top = p["chapter"].split(".")[0]
         top_level[top] += 1
-
     print("\n[Passages per top-level chapter]")
+
     for ch in sorted(top_level, key=lambda x: int(x) if x.isdigit() else 0):
         print(f"  Chapter {ch}: {top_level[ch]} passages")

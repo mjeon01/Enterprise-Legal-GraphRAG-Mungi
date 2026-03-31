@@ -34,7 +34,7 @@ def list_questions(qa: list) -> None:
             lines.append(" ".join(line))
 
         print(f"  [{qid:>3}] (passage: {pid})")
-        for i, l in enumerate(lines):
+        for i, ln in enumerate(lines):
             prefix = "            " if i > 0 else "        Q:  "
-            print(f"{prefix}{l}")
+            print(f"{prefix}{ln}")
         print()

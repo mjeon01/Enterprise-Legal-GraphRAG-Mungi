@@ -1,5 +1,4 @@
 import re
-import math
 
 STOPWORDS = {
     "the", "a", "an", "is", "are", "was", "were", "be", "been", "being",
