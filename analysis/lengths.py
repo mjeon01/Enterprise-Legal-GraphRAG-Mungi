@@ -26,7 +26,6 @@ def analyze_lengths(corpus: list) -> None:
     print(f"  mean  : {mean:.1f}")
     print(f"  std   : {std:.1f}")
 
-    # ASCII histogram
     bucket_size = max(1, (lengths[-1] - lengths[0]) // 10)
     buckets: dict[int, int] = defaultdict(int)
     for wc in lengths:
@@ -42,7 +41,6 @@ def analyze_lengths(corpus: list) -> None:
         bar = "█" * int(cnt / max_count * bar_width)
         print(f"  {lo:4d}-{hi:4d} | {bar:<{bar_width}} {cnt}")
 
-    # Passages per section
     section_counts = Counter(parse_id(p["id"])["chapter"] for p in corpus)
     counts = sorted(section_counts.values())
 
