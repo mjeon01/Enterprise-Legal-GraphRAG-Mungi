@@ -22,7 +22,7 @@ def analyze_hierarchy(corpus: list) -> None:
     for p in parsed:
         chapters_by_depth[p["depth"]].add(p["chapter"])
     print("\n[Unique sections per depth]")
-    
+
     for depth in sorted(chapters_by_depth):
         print(f"  depth {depth}: {len(chapters_by_depth[depth])} unique sections")
 

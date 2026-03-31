@@ -1,5 +1,6 @@
 import torch
 
+
 def get_device() -> torch.device:
 
     if torch.backends.mps.is_available():

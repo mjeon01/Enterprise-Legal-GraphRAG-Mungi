@@ -51,8 +51,8 @@ def analyze_lengths(corpus: list) -> None:
     print(f"  min            : {counts[0]}")
     print(f"  median         : {percentile(counts, 50):.0f}")
     print(f"  max            : {counts[-1]}")
-    print(f"  mean           : {sum(counts)/len(counts):.1f}")
+    print(f"  mean           : {sum(counts) / len(counts):.1f}")
     print("\n[Sections with most passages (top 10)]")
-    
+
     for section, cnt in section_counts.most_common(10):
         print(f"  {section}: {cnt}")
